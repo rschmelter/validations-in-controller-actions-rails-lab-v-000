@@ -11,7 +11,12 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+<<<<<<< HEAD
     if @post.update(post_params)
+=======
+    if @post.valid?
+      @post.update(post_params)
+>>>>>>> eb016b83447b4f905f2af5f15f4a48c436eafc94
       redirect_to post_path(@post)
     else
       render :edit
